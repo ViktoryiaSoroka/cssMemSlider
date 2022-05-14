@@ -6,8 +6,9 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    font-size: 30px;
+    font-size: 1em;
     height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -47,11 +48,10 @@ body {
 }
 
 .dot {
-    width: 40px;
-    height: 40px;
-    border-radius: 40px;
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 1.8em;
     background-color: #006EFF;
-    gap: 5px;
     border: 10px solid #fff;
 }
 
@@ -62,4 +62,70 @@ body {
 
 .selected {
     background-color: #FFD800;
+}
+
+@keyframes move-left {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: -100%;
+    }
+}
+
+
+@keyframes move-right {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+.to-left {
+    animation-name: move-left;
+    animation-duration: 2s;
+}
+
+.to-right {
+    animation-name: move-right;
+    animation-direction: reverse;
+    animation-duration: 2s;
+}
+
+.from-left {
+    animation-name: move-left;
+    animation-direction: reverse;
+    animation-duration: 2s;
+}
+
+.from-right {
+    animation-name: move-right;
+    animation-duration: 2s;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+
+    .images_wrapper {
+        order: 1;
+    }
+
+    .pangination {
+        order: 2;
+        margin: 3% 0;
+    }
+
+    .text_wrapper {
+        order: 3;
+    }
+
+
 }
