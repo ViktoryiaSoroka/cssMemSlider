@@ -8,51 +8,80 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 1em;
     height: 100vh;
-    overflow: hidden;
 }
 
 
 .container {
-    max-width: 1280px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 20px 10px;
     margin: 0 auto;
+    max-width: 1280px;
+}
+
+.slider {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 15px;
 }
 
 .images_wrapper {
-    width: 100%;
-    margin-bottom: 10px;
+    display: flex;
+    transition: all ease 2s;
 }
 
-.slide_images img {
-    width: 100%;
+.slide_image {
+    animation: animation_img 5s;
+    display: none;
 }
 
-.slide_images,
+
+@keyframes animation_img {
+    from {
+        filter: grayscale(100%);
+    }
+
+    to {
+        filter: grayscale(0);
+    }
+}
+
+
 .slide_text {
     display: none;
-    transform-origin: left;
-    transition: 0.5s;
-    transition-timing-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+    width: 100%;
+    animation: animation_text 5s;
+}
+
+@keyframes animation_text {
+    from {
+        opacity: .2;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 .active {
     display: block;
 }
 
+
 .pangination {
     display: flex;
 }
 
 .dot {
-    width: 1.8em;
-    height: 1.8em;
-    border-radius: 1.8em;
+    width: 2em;
+    height: 2em;
+    border-radius: 2em;
     background-color: #006EFF;
     border: 10px solid #fff;
+    transition: all 1s ease;
 }
 
 .dot:hover {
@@ -62,49 +91,11 @@ body {
 
 .selected {
     background-color: #FFD800;
+    transform: scale(0.8);
 }
 
-@keyframes move-left {
-    from {
-        left: 0;
-    }
-
-    to {
-        left: -100%;
-    }
-}
-
-
-@keyframes move-right {
-    from {
-        left: 100%;
-    }
-
-    to {
-        left: 0;
-    }
-}
-
-.to-left {
-    animation-name: move-left;
-    animation-duration: 2s;
-}
-
-.to-right {
-    animation-name: move-right;
-    animation-direction: reverse;
-    animation-duration: 2s;
-}
-
-.from-left {
-    animation-name: move-left;
-    animation-direction: reverse;
-    animation-duration: 2s;
-}
-
-.from-right {
-    animation-name: move-right;
-    animation-duration: 2s;
+.selected:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -128,4 +119,10 @@ body {
     }
 
 
+}
+
+@media (min-width: 769px)and (max-width: 970px) {
+    .text_wrapper {
+        max-width: 500px;
+    }
 }
