@@ -30,22 +30,9 @@
 
     initApp();
 
-    const buttons = document.querySelector(".dot");
-    const images = document.querySelectorAll(".slide_image"); //img
+    const images = document.querySelectorAll(".slide_image");
     const text = document.querySelectorAll(".slide_text");
-    const imagesWrapper = document.querySelector(".images_wrapper"); //slider line
-    const slider = document.querySelector(".slider"); // slider 
     let index = 0;
-    let width;
-
-    function changeImage() {
-        width = slider.offsetWidth;
-        slider.style.width = width * images.length + 'px';
-        images.forEach(item => {
-            item.style.width = width + 'px';
-        })
-    }
-    window.addEventListener('resize', changeImage);
 
     const selectedText = n => {
         for (slide_text of text) {
