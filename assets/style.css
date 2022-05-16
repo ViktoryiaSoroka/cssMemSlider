@@ -16,7 +16,7 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 1.25rem .7rem;
+    padding: 0rem .7rem;
     margin: 0 auto;
     max-width: 80rem;
 }
@@ -25,6 +25,8 @@ body {
     max-width: 100%;
     margin: 0 auto;
     margin-bottom: 1rem;
+    overflow-y: hidden;
+    max-height: 85vh;
 }
 
 .images_wrapper {
