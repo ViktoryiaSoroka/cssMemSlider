@@ -16,21 +16,20 @@ body {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 20px 10px;
+    padding: 1.25rem .7rem;
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 80rem;
 }
 
 .slider {
     max-width: 100%;
     margin: 0 auto;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
 .images_wrapper {
     display: flex;
     transition: all ease 2s;
-    height: 80vh;
 }
 
 .slide_image {
@@ -49,17 +48,19 @@ body {
     }
 }
 
+img {
+    max-width: 100%;
+}
+
 
 .slide_text {
     display: none;
-
-    width: 100%;
     animation: animation_text 5s;
 }
 
 @keyframes animation_text {
     from {
-        opacity: .2;
+        opacity: 0;
     }
 
     to {
@@ -78,11 +79,11 @@ body {
 }
 
 .dot {
-    width: 2em;
-    height: 2em;
-    border-radius: 2em;
+    width: 2.5em;
+    height: 2.5em;
+    border-radius: 1.7em;
     background-color: #006EFF;
-    border: 10px solid #fff;
+    border: .9rem solid #fff;
     transition: all 1s ease;
 }
 
@@ -97,11 +98,15 @@ body {
 }
 
 .selected:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 .9rem rgba(0, 0, 0, 0.5);
 }
 
 
 @media screen and (max-width: 768px) {
+
+    p {
+        font-size: .7rem;
+    }
 
     .container {
         flex-direction: column;
@@ -123,8 +128,14 @@ body {
 
 }
 
-@media (min-width: 769px)and (max-width: 970px) {
+@media (min-width: 864px)and (max-width: 1083px) {
     .text_wrapper {
-        max-width: 500px;
+        max-width: 31.25rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 863px) {
+    .text_wrapper {
+        max-width: 27rem;
     }
 }
