@@ -10,7 +10,6 @@ body {
     height: 100vh;
 }
 
-
 .container {
     display: flex;
     align-items: center;
@@ -21,24 +20,18 @@ body {
     max-width: 80rem;
 }
 
-.slider {
-    max-width: 100%;
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    overflow-y: hidden;
-    max-height: 85vh;
-}
-
-.images_wrapper {
-    display: flex;
-    transition: all ease 2s;
-}
-
-.slide_image {
-    animation: animation_img 5s;
+input {
     display: none;
 }
 
+.images_wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    max-height: 85vh;
+    overflow: hidden;
+    transition: all ease 2s;
+}
 
 @keyframes animation_img {
     from {
@@ -52,8 +45,9 @@ body {
 
 img {
     max-width: 100%;
+    animation: animation_img 4s;
+    display: none;
 }
-
 
 .slide_text {
     display: none;
@@ -69,12 +63,6 @@ img {
         opacity: 1;
     }
 }
-
-.active {
-    display: block;
-}
-
-
 
 .pangination {
     display: flex;
@@ -92,17 +80,9 @@ img {
 .dot:hover {
     background-color: #FFD800;
     cursor: pointer;
-}
-
-.selected {
-    background-color: #FFD800;
+    box-shadow: 0 0 .7rem rgba(0, 0, 0, 0.5);
     transform: scale(0.8);
 }
-
-.selected:hover {
-    box-shadow: 0 0 .9rem rgba(0, 0, 0, 0.5);
-}
-
 
 @media screen and (max-width: 768px) {
 
@@ -126,8 +106,6 @@ img {
     .text_wrapper {
         order: 3;
     }
-
-
 }
 
 @media (min-width: 864px)and (max-width: 1083px) {
@@ -140,4 +118,35 @@ img {
     .text_wrapper {
         max-width: 27rem;
     }
+}
+
+#sl1:checked~.images_wrapper .img1,
+#sl2:checked~.images_wrapper .img2,
+#sl3:checked~.images_wrapper .img3,
+#sl4:checked~.images_wrapper .img4,
+#sl5:checked~.images_wrapper .img5,
+#sl6:checked~.images_wrapper .img6,
+#sl7:checked~.images_wrapper .img7 {
+    display: block;
+}
+
+#sl1:checked~.text_wrapper .tx1,
+#sl2:checked~.text_wrapper .tx2,
+#sl3:checked~.text_wrapper .tx3,
+#sl4:checked~.text_wrapper .tx4,
+#sl5:checked~.text_wrapper .tx5,
+#sl6:checked~.text_wrapper .tx6,
+#sl7:checked~.text_wrapper .tx7 {
+    display: block;
+}
+
+#sl1:checked~.pangination label:first-child,
+#sl2:checked~.pangination label:nth-child(2),
+#sl3:checked~.pangination label:nth-child(3),
+#sl4:checked~.pangination label:nth-child(4),
+#sl5:checked~.pangination label:nth-child(5),
+#sl6:checked~.pangination label:nth-child(6),
+#sl7:checked~.pangination label:nth-child(7) {
+    background-color: #FFD800;
+    transform: scale(0.8);
 }
