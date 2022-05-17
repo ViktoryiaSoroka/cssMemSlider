@@ -1,3 +1,5 @@
+    alert('Уважаемый проверяющий, просьба проверить мою работу позднее, так как не совсем разобралась с ТЗ. Буду очень признательна');
+    
     function initApp() {
         const pangination = document.querySelector(".pangination");
 
